@@ -1,16 +1,16 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/rCk-UBU7)
 # Projeto Conta Bancária
 
-### Requisitos da Classe `ContaBancaria`
+### Requisitos da Classe `ContaBancaria` 🏦
 
-#### Atributos:
+#### Atributos: ⚒️
 
 1. **numeroConta**: Representa o número da conta bancária.
 2. **agencia**: Representa o número da agência bancária.
 3. **saldo**: Armazena o saldo atual da conta.
 4. **extrato**: Armazena o histórico de operações realizadas na conta (depósitos, saques, transferências).
 
-#### Métodos:
+#### Métodos: 💸
 
 1. **depositar(valor: number)**: Permite realizar um depósito na conta, aumentando o saldo.
 2. **sacar(valor: number)**: Permite realizar um saque, diminuindo o saldo, desde que o valor seja válido e não exceda o saldo disponível.
@@ -20,7 +20,7 @@
 6. **registrarOperacao(descricao: string)**: Método privado para registrar cada operação no extrato da conta, incluindo a data e a descrição da transação.
 
 
-### Descrição dos Comandos de Teste
+### Descrição dos Comandos de Teste 👨🏻‍💻
 
 - **beforeEach**: Executa antes de cada teste para garantir que o estado inicial seja restaurado. No caso da `ContaBancaria`, recria duas conta com número da conta1(1122) e conta2(3344), ambas com agência(1) antes de cada teste.
   ```typescript
@@ -57,7 +57,7 @@
     expect(conta1.consultarSaldo()).toBe(0)
     expect(() => conta1.sacar(100)).toThrow("Saldo insuficiente") 
 
-Para executar os testes:
+Para executar os testes: ▶️
 
 ```sh
 bun test
