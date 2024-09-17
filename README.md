@@ -20,6 +20,43 @@
 6. **registrarOperacao(descricao: string)**: Método privado para registrar cada operação no extrato da conta, incluindo a data e a descrição da transação.
 
 
+### Descrição dos Comandos de Teste
+
+- **beforeEach**: Executa antes de cada teste para garantir que o estado inicial seja restaurado. No caso da `ContaBancaria`, recria duas conta com número da conta1(1122) e conta2(3344), ambas com agência(1) antes de cada teste.
+  ```typescript
+  beforeEach(() => {
+        conta1 = new ContaBancaria(1122, 1)
+        conta2 = new ContaBancaria(3344, 1)
+    });
+- **describe**: Agrupa os testes relacionados a uma funcionalidade ou classe específica. No caso, agrupa os testes da classe `ContaBancaria`.
+  ```typescript
+  describe("Testando classe ContaBancaria", () => {
+    let conta1: ContaBancaria;
+    let conta2: ContaBancaria;
+    beforeEach(() => {
+        conta1 = new ContaBancaria(1122, 1);
+        conta2 = new ContaBancaria(3344, 1);
+    });
+
+    test("Testando depositar valor positivo", () => {
+        conta1.depositar(100);
+        expect(conta1.consultarSaldo()).toBe(100);
+    });
+    });
+
+- **test**: Define um caso de teste individual. Cada função `test` contém um cenário que será verificado.
+  ```typescript
+    test("Realizando um saque válido", () => {
+      conta1.depositar(200);
+      expect(conta1.sacar(100)).toBe(100);
+    });
+- **expect**: Utilizado para verificar o valor retornado e se corresponde ao esperado. Exemplos:
+  - `toBe(0)` verifica se o saldo é exatamente 0.
+  - `toThrow("Saldo insuficiente")` verifica se uma exceção com essa mensagem é lançada quando se tenta sacar um valor superior ao saldo disponível.
+  ```typescript
+    expect(conta1.consultarSaldo()).toBe(0)
+    expect(() => conta1.sacar(100)).toThrow("Saldo insuficiente") 
+
 Para executar os testes:
 
 ```sh
