@@ -22,7 +22,7 @@
 
 ### Descrição dos Comandos de Teste 👨🏻‍💻
 
-- **beforeEach**: Executa antes de cada teste para garantir que o estado inicial seja restaurado. No caso da `ContaBancaria`, recria duas conta com número da conta1(1122) e conta2(3344), ambas com agência(1) antes de cada teste.
+- **beforeEach**: Executa antes de cada teste para garantir que o estado inicial seja restaurado. No caso da `ContaBancaria`, recria duas contas com número da conta1(1122) e conta2(3344), ambas com agência(1) antes de cada teste.
   ```typescript
   beforeEach(() => {
         conta1 = new ContaBancaria(1122, 1)
